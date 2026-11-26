@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@mapbox/vector-tile": "^2.0.3",
-    "pbf": "^4.0.1",
+    "pbf": "^5.2.0",
     "pmtiles": "^4.3.0",
     "polygon-clipping": "^0.15.7",
     "topojson-client": "^3.1.0",

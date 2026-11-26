@@ -1,0 +1,22 @@
+version: 2
+updates:
+  # "bun", not "npm": the npm ecosystem updates package-lock.json, which doesn't exist here, and
+  # would leave bun.lock stale.
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      bun-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+
+  # The OSV-Scanner workflow pins its action by commit; without this it would never move.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      actions-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
